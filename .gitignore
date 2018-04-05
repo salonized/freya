@@ -11,3 +11,9 @@ _gh_pages
 _site
 node_modules
 test/output/
+
+# Logs
+**/*.log
+
+# Build output
+css/

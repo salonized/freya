@@ -1,4 +1,5 @@
 severity: error
+scss_files: 'scss/**'
 
 linters:
   BorderZero:

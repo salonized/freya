@@ -24,13 +24,14 @@
     "rimraf": "^2.6.1"
   },
   "scripts": {
-    "build": "npm run build-clean && npm run build-scss && npm run build-autoprefix",
+    "build": "npm run build-clean && npm run lint && npm run build-scss && npm run build-min-scss && npm run build-autoprefix",
     "build-autoprefix": "postcss --use autoprefixer --map false --output css/freya.css css/freya.css",
     "build-clean": "rimraf css",
     "build-scss": "node-sass --output-style expanded --source-map true freya.scss css/freya.css",
-    "deploy": "npm run build",
+    "build-min-scss": "node-sass --output-style compressed --source-map true freya.scss css/freya.min.css",
+    "deploy": "npm run lint && npm run build",
     "start": "npm run build-scss -- --watch",
-    "start-test": "npm run test-scss -- --watch"
+    "lint": "scss-lint"
   },
   "files": [
     "css",

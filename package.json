@@ -1,0 +1,42 @@
+{
+  "name": "freya",
+  "version": "1.0.0",
+  "description": "Salonized SCSS framework",
+  "main": "freya.scss",
+  "style": "freya/css/freya.css",
+  "repository": "https://github.com/salonized/freya",
+  "author": "Team Salonized",
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "framework"
+  ],
+  "bugs": {
+    "url": "https://github.com/salonized/freya/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.1",
+    "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.0",
+    "rimraf": "^2.6.1"
+  },
+  "scripts": {
+    "build": "npm run build-clean && npm run build-scss && npm run build-autoprefix",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output css/freya.css css/freya.css",
+    "build-clean": "rimraf css",
+    "build-scss": "node-sass --output-style expanded --source-map true freya.scss css/freya.css",
+    "deploy": "npm run build",
+    "start": "npm run build-scss -- --watch",
+    "start-test": "npm run test-scss -- --watch"
+  },
+  "files": [
+    "css",
+    "scss",
+    "freya.scss",
+    "LICENSE",
+    "README.md"
+  ]
+}

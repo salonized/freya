@@ -21,17 +21,19 @@
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "node-sass": "^4.5.3",
+    "nucleus": "^0.0.0",
     "postcss-cli": "^4.1.0",
     "rimraf": "^2.6.1"
   },
   "scripts": {
-    "build": "npm run build-clean && npm run lint && npm run build-scss && npm run build-min-scss && npm run build-autoprefix",
+    "build": "yarn build-clean && yarn lint && yarn build-scss && yarn build-min-scss && yarn build-autoprefix && yarn build-docs",
     "build-autoprefix": "postcss --use autoprefixer --map false --output css/freya.css css/freya.css",
-    "build-clean": "rimraf css",
+    "build-clean": "rimraf css styleguide",
     "build-scss": "node-sass --output-style expanded --source-map true freya.scss css/freya.css",
     "build-min-scss": "node-sass --output-style compressed --source-map true freya.scss css/freya.min.css",
-    "deploy": "npm run lint && npm run build",
-    "start": "npm run build-scss -- --watch",
+    "build-docs": "nucleus",
+    "deploy": "yarn lint && yarn build",
+    "start": "yarn build-scss -- --watch",
     "lint": "scss-lint"
   },
   "files": [

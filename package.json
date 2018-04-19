@@ -28,7 +28,7 @@
   "scripts": {
     "build": "yarn build-clean && yarn lint && yarn build-scss && yarn build-min-scss && yarn build-autoprefix && yarn build-docs",
     "build-autoprefix": "postcss --use autoprefixer --map false --output css/freya.css css/freya.css",
-    "build-clean": "rimraf css styleguide",
+    "build-clean": "rimraf css",
     "build-scss": "node-sass --output-style expanded --source-map true freya.scss css/freya.css",
     "build-min-scss": "node-sass --output-style compressed --source-map true freya.scss css/freya.min.css",
     "build-docs": "nucleus",

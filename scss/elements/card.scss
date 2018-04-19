@@ -1,0 +1,62 @@
+@charset "utf-8";
+
+$card-border-color: $accent-dark;
+$card-border-radius: .125rem;
+$card-box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$card-header-color: $primary;
+$card-footer-color: lighten($primary, 10%);
+
+/**
+ * @molecule Card
+ * @section Navigation > Cards
+ * @modifiers
+ *  .is-success Card success
+ * @markup
+ *  <div class="card">
+ *    <section>
+ *      Card body
+ *    </section>
+ *  </div>
+ *  <div class="card">
+ *    <header>
+ *      <h4>Card header</h4>
+ *    </header>
+ *    <section>
+ *      Card body
+ *    </section>
+ *    <footer>
+ *      Card footer
+ *    </footer>
+ *  </div>
+ */
+.card {
+  flex: 1 1 auto;
+  border: 1px solid $card-border-color;
+  border-radius: $card-border-radius;
+  background: $white;
+  margin: 0 0 $spacer-lg;
+  box-shadow: $card-box-shadow;
+
+  > header,
+  > section,
+  > footer {
+    padding: $spacer;
+    border-bottom: 1px solid $card-border-color;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  > header {
+    color: $card-header-color;
+
+    :last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  > footer {
+    color: $card-footer-color;
+  }
+}

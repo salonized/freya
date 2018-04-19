@@ -1,6 +1,6 @@
 {
   "name": "freya",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Salonized SCSS framework",
   "main": "freya.scss",
   "sass": "freya.scss",
@@ -39,6 +39,7 @@
   "files": [
     "css",
     "scss",
+    "docs",
     "freya.scss",
     "LICENSE",
     "README.md"

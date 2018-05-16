@@ -23,3 +23,6 @@ export default class SzCard extends PolymerElement {
 		}
 	}
 }
+
+console.log('foo');
+customElements.define('sz-card', SzCard);

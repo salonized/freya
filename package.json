@@ -2,11 +2,11 @@
   "name": "freya",
   "version": "1.0.2",
   "description": "Salonized SCSS framework",
-  "main": "freya.scss",
-  "sass": "freya.scss",
-  "style": "css/freya.css",
-  "repository": "https://github.com/salonized/freya",
   "author": "Team Salonized",
+  "repository": "https://github.com/salonized/freya",
+  "main": "src/index.js",
+  "sass": "src/freya.scss",
+  "style": "dist/css/freya.css",
   "license": "MIT",
   "keywords": [
     "css",
@@ -18,29 +18,19 @@
   "bugs": {
     "url": "https://github.com/salonized/freya/issues"
   },
-  "devDependencies": {
-    "autoprefixer": "^7.1.1",
-    "node-sass": "^4.5.3",
-    "nucleus": "^0.0.0",
-    "postcss-cli": "^4.1.0",
-    "rimraf": "^2.6.1"
-  },
   "scripts": {
-    "build": "yarn build-clean && yarn lint && yarn build-scss && yarn build-min-scss && yarn build-autoprefix && yarn build-docs",
-    "build-autoprefix": "postcss --use autoprefixer --map false --output css/freya.css css/freya.css",
-    "build-clean": "rimraf css",
-    "build-scss": "node-sass --output-style expanded --source-map true freya.scss css/freya.css",
-    "build-min-scss": "node-sass --output-style compressed --source-map true freya.scss css/freya.min.css",
-    "build-docs": "nucleus",
-    "deploy": "yarn lint && yarn build",
-    "start": "yarn build-scss -- --watch",
-    "lint": "scss-lint"
+    "start": "node server.js",
+    "build": "rollup -c"
+  },
+  "dependencies": {
+    "@polymer/polymer": "next"
+  },
+  "devDependencies": {
+    "rollup": "^0.49.2",
+    "rollup-plugin-commonjs": "^8.2.0",
+    "rollup-plugin-node-resolve": "^3.0.0"
   },
   "files": [
-    "css",
-    "scss",
-    "docs",
-    "freya.scss",
     "LICENSE",
     "README.md"
   ]
